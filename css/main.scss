@@ -96,7 +96,9 @@ a {
 }
 
 .emoji {
-
+    img {
+        vertical-align: baseline !important;
+    }
 }
 
 .emoji_chocolate {
