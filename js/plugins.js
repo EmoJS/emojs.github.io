@@ -26,7 +26,13 @@
 
 $(function() {
     $('.main-nav').waypoint('sticky');
-    
+
+    $('.js-waypoint').waypoint(function() {
+        $('.main-nav a.active').removeClass('active');
+        console.log(this.id);
+        $('.main-nav a[href="#' + this.id + '"').addClass('active');
+    }, { offset: 100 });
+
     $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);

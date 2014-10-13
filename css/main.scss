@@ -9,6 +9,7 @@ $light-orange: #f79329;
 $yellow: #fbc11a;
 $pink: #d7598b;
 $grey: #2f2f2f;
+$light-grey: #ccc;
 
 $clr-text: $grey;
 
@@ -22,7 +23,7 @@ $font-text: 'Open Sans', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida
 $font-header: 'Changa One', Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 
 $box-shadow: 0 5px 10px rgba($grey, .5);
-$transition-active: all .3 ease;
+$transition-active: all .3s ease;
 
 
 html,
@@ -52,7 +53,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $light-grey;
     margin: 1em 0;
     padding: 0;
 }
@@ -99,42 +100,18 @@ pre {
     border-left: 5px solid $blue;
 
     code {
-        border: 1px solid $grey;
+        // border: 1px solid $grey;
         border-left: none;
         padding: $spacing-medium;
         display: block;
+        background-color: rgba(#ccc, 0.3);
     }
 }
-
-// .emoji {
-//     img {
-//         vertical-align: baseline !important;
-//     }
-
-// }
-
-// .emoji_chocolate {
-//     font-size: 2rem;
-//     vertical-align: middle;
-// }
 
 body {
     font: 16px/27px $font-text;
     background-image: url('/img/dimension.png');
 }
-    // // Assumption: that browsers over x width are desktop and need to have an emoji font supplied to them
-    // // @media only screen and (min-width: 1000px) {
-    //     @font-face {
-    //         font-family: 'Symbola';
-    //         src: url('/fonts/symbola_hint.woff') format('woff'); /* Modern Browsers */
-    //         unicode-range: U+1F???;
-    //     }
-        
-    //     body {
-
-    //         font-family: 'Symbola';
-    //     }
-    // // }
 
 h1,
 h2,
@@ -156,8 +133,8 @@ h3 {
 }
 
 .wrapper {
-    width: 90%;
-    margin: 0 5%;
+    width: auto;
+    margin: 0 $spacing-medium;
 }
 
 .title {
@@ -263,16 +240,23 @@ nav  {
 }
 
 .main {
-    padding: 30px 0;
+    padding: $spacing-medium 0;
+
+    .hero {
+        padding: $spacing-medium;
+        margin: -$spacing-medium;
+        margin-bottom: $spacing-medium;
+        background-color: rgba($light-grey, 0.5);
+    }
+
+    article:not(.hero) header {
+        border-bottom: 1px solid $light-grey;
+        margin-top: $spacing-medium + $spacing-large;
+    }
 }
 
 .main article h1 {
     font-size: 2em;
-}
-
-.main aside {
-    color: white;
-    padding: 0px 5% 10px;
 }
 
 .page-footer {
