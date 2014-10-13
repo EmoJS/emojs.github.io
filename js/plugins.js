@@ -23,8 +23,11 @@
 
 // Place any jQuery/helper plugins in here.
 
+
 $(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
+    $('.main-nav').waypoint('sticky');
+    
+    $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -35,7 +38,12 @@ $(function() {
         return false;
       }
     }
-  });
-});
+    });
 
-$('.main-nav').waypoint('sticky');
+    $('.title,code,.page-footer').each(function() {
+        var original = $(this).html();
+        // use .shortnameToImage if only converting shortnames (for slightly better performance)
+        var converted = emojione.unicodeToImage(original);
+        $(this).html(converted);
+    });
+});

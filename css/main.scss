@@ -1,5 +1,5 @@
 @import "normalize";
-@import "prism";
+// @import "prism";
 @import "mixins";
 
 // Variables
@@ -95,22 +95,46 @@ a {
     }
 }
 
-.emoji {
-    img {
-        vertical-align: baseline !important;
+pre {
+    border-left: 5px solid $blue;
+
+    code {
+        border: 1px solid $grey;
+        border-left: none;
+        padding: $spacing-medium;
+        display: block;
     }
 }
 
-.emoji_chocolate {
-    font-size: 2rem;
-    vertical-align: middle;
-}
+// .emoji {
+//     img {
+//         vertical-align: baseline !important;
+//     }
+
+// }
+
+// .emoji_chocolate {
+//     font-size: 2rem;
+//     vertical-align: middle;
+// }
 
 body {
     font: 16px/27px $font-text;
-    // background-image: url('/img/food.png');
     background-image: url('/img/dimension.png');
 }
+    // // Assumption: that browsers over x width are desktop and need to have an emoji font supplied to them
+    // // @media only screen and (min-width: 1000px) {
+    //     @font-face {
+    //         font-family: 'Symbola';
+    //         src: url('/fonts/symbola_hint.woff') format('woff'); /* Modern Browsers */
+    //         unicode-range: U+1F???;
+    //     }
+        
+    //     body {
+
+    //         font-family: 'Symbola';
+    //     }
+    // // }
 
 h1,
 h2,
@@ -148,14 +172,10 @@ h3 {
         // color: $blue;
     }
 
-    // Yes that selector is hardcore but I have my reasons
-    #emoji,
     .emoji.emoji_smile {
 
-        &,
-        & > span {
-            font-size: .85em !important;
-        }
+        font-size: 3rem;
+        vertical-align: middle;
     }
 }
 
