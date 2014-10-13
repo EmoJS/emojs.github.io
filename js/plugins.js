@@ -23,13 +23,11 @@
 
 // Place any jQuery/helper plugins in here.
 
-
 $(function() {
     $('.main-nav').waypoint('sticky');
 
     $('.js-waypoint').waypoint(function() {
         $('.main-nav a.active').removeClass('active');
-        console.log(this.id);
         $('.main-nav a[href="#' + this.id + '"').addClass('active');
     }, { offset: 100 });
 
@@ -46,10 +44,13 @@ $(function() {
     }
     });
 
-    $('.title,code,.page-footer').each(function() {
+    // Make sure unicode alt is on!
+    emojione.unicodeAlt = true;
+    emojione.imageType = 'png';
+
+    $('.title,.main,.page-footer').each(function() {
         var original = $(this).html();
-        // use .shortnameToImage if only converting shortnames (for slightly better performance)
-        var converted = emojione.unicodeToImage(original);
+        var converted = emojione.toImage(original);
         $(this).html(converted);
     });
 });
