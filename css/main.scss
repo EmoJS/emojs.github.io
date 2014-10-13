@@ -253,11 +253,14 @@ nav  {
         border-bottom: 1px solid $light-grey;
         margin-top: $spacing-medium + $spacing-large;
     }
+
+    h1 {
+        font-size: 2em;
+        margin: $spacing-small 0;
+        line-height: 1.1;
+    }
 }
 
-.main article h1 {
-    font-size: 2em;
-}
 
 .page-footer {
     background: $light-orange;
