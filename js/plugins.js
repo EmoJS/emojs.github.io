@@ -48,7 +48,7 @@ $(function() {
     emojione.unicodeAlt = true;
     emojione.imageType = 'png';
 
-    $('.title,.main,.page-footer').each(function() {
+    $('.title,pre,.page-footer').each(function() {
         var original = $(this).html();
         var converted = emojione.toImage(original);
         $(this).html(converted);
