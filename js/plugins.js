@@ -44,10 +44,6 @@ $(function() {
     }
     });
 
-    // Make sure unicode alt is on!
-    emojione.unicodeAlt = true;
-    emojione.imageType = 'png';
-
     $('.title,pre,.js-parseForEmoji,.page-footer').each(function() {
         var original = $(this).html();
         var converted = emojione.toImage(original);
